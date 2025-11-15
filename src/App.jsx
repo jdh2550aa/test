@@ -1,6 +1,7 @@
 import { createSignal, onMount } from 'solid-js'
 import solidLogo from './assets/solid.svg'
 import viteLogo from '/vite.svg'
+import Layout from './components/Layout'
 import './App.css'
 
 function App() {
@@ -35,36 +36,38 @@ function App() {
   }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://solidjs.com" target="_blank">
-          <img src={solidLogo} class="logo solid" alt="Solid logo" />
-        </a>
-      </div>
-      <h1>Vite + Solid PWA</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count()}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-        {isInstallable() && (
-          <button
-            onClick={handleInstallClick}
-            style={{ "margin-top": "1rem", "background-color": "#2c4f7c" }}
-          >
-            Install PWA
+    <Layout>
+      <div class="app-content">
+        <div class="logo-container">
+          <a href="https://vite.dev" target="_blank">
+            <img src={viteLogo} class="logo" alt="Vite logo" />
+          </a>
+          <a href="https://solidjs.com" target="_blank">
+            <img src={solidLogo} class="logo solid" alt="Solid logo" />
+          </a>
+        </div>
+        <h1>Vite + Solid PWA</h1>
+        <div class="card">
+          <button onClick={() => setCount((count) => count + 1)}>
+            count is {count()}
           </button>
-        )}
+          <p>
+            Edit <code>src/App.jsx</code> and save to test HMR
+          </p>
+          {isInstallable() && (
+            <button
+              onClick={handleInstallClick}
+              style={{ "margin-top": "1rem", "background-color": "#2c4f7c" }}
+            >
+              Install PWA
+            </button>
+          )}
+        </div>
+        <p class="read-the-docs">
+          This is a Progressive Web App built with Solid.js and Vite
+        </p>
       </div>
-      <p class="read-the-docs">
-        This is a Progressive Web App built with Solid.js and Vite
-      </p>
-    </>
+    </Layout>
   )
 }
 

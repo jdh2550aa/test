@@ -1,0 +1,23 @@
+.main-work-area {
+  position: fixed;
+  top: 60px;
+  left: 250px;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  background-color: #f7fafc;
+}
+
+.main-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .main-work-area {
+    left: 0;
+  }
+}
